@@ -44,5 +44,5 @@ export default function ProductContextProvider({children}) {
     products: state.products,
   }
 
-  return <productContext.Provider>{children}</productContext.Provider>;
+  return <productContext.Provider value={values}>{children}</productContext.Provider>;
 }
