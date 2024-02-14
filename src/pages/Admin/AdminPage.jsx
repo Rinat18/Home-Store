@@ -1,6 +1,6 @@
 import React from 'react'
 
-const App = () => {
+export default function AdminPage() {
   return (
     <div>
       
@@ -8,4 +8,3 @@ const App = () => {
   )
 }
 
-export default App

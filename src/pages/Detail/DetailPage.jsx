@@ -1,11 +1,9 @@
 import React from 'react'
 
-const App = () => {
+export default function DetailPage() {
   return (
     <div>
       
     </div>
   )
 }
-
-export default App
