@@ -2,19 +2,31 @@ import React, { useEffect, useState } from "react";
 import { useProduct } from "../../context/ProductContextProvider";
 import { Button } from "@mui/material";
 import AddProduct from "./AddProduct";
+import "./product.scss";
+import EditIcon from "@mui/icons-material/Edit";
+import DeleteIcon from "@mui/icons-material/Delete";
+import EditProduct from "./EditProduct";
 
 export default function CardsList() {
-  const { readProducts, products } = useProduct();
+  const { readProducts, products, deleteProduct } = useProduct();
   const [open, setOpen] = useState(false);
+  const [open2, setOpen2] = useState(false);
   const openModal = () => {
     setOpen(true);
   };
   const closeModal = () => {
     setOpen(false);
   };
+  const openModal2 = () => {
+    setOpen2(true);
+  };
+  const closeModal2 = () => {
+    setOpen2(false);
+  };
   useEffect(() => {
     readProducts();
   }, []);
+
   return (
     <>
       <Button onClick={openModal}>Add Product</Button>
@@ -28,7 +40,12 @@ export default function CardsList() {
                     <img className="card__image" src={elem.image} alt="" />
                   </div>
                   <div className="card__title">{elem.title}</div>
-                  <div className="card__price">{elem.price}</div>
+                  <div className="card__price">Price: {elem.price}$</div>
+                  <div className="card__admin">
+                    <EditIcon onClick={openModal2} />
+                    <DeleteIcon onClick={() => deleteProduct(elem.id)} />
+                  </div>
+                  <EditProduct open2={open2} elem={elem} closeModal2={closeModal2} />
                 </div>
               ))}
             </>
