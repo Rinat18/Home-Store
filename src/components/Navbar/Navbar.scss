@@ -21,6 +21,9 @@
 	&__buttons {
 		display: flex;
 		gap: 15px;
+		button {
+			background-color: inherit;
+		}
 	}
 
 	&__cart {
