@@ -26,3 +26,5 @@ export const calcSubPrice = (elem) => {
 	console.log(elem);
 	return elem.item.price * elem.count;
 };
+
+export const API_F = "http://localhost:8001/favorites";

@@ -7,6 +7,7 @@ export default function AddProduct({ closeModal, open }) {
   const [product, setProduct] = useState({
     image: "",
     title: "",
+    category: "",
     price: 0,
     comments: [],
     likes: [],
