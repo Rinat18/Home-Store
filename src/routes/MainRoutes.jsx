@@ -1,10 +1,12 @@
 import React from "react";
 import CartPage from "../pages/Cart/CartPage";
-import HomePage from "../pages/HomePage/HomePage";
+import HomePage from "../pages/Home/HomePage";
 import DetailPage from "../pages/Detail/DetailPage";
 import AdminPage from "../pages/Admin/AdminPage";
 import FavoritesPage from "../pages/Favorite/FavoritesPage";
 import { Route, Routes } from "react-router-dom";
+import AddProduct from "../components/products/AddProduct";
+import CardsList from "../components/products/CardsList";
 
 export default function MainRoutes() {
   const PUBLIC_ROUTES = [
@@ -13,6 +15,7 @@ export default function MainRoutes() {
     { link: "/admin", element: <AdminPage /> },
     { link: "/favorite", element: <FavoritesPage /> },
     { link: "/cart", element: <CartPage /> },
+    { link: "/list", element: <CardsList /> },
   ];
   return (
     <>

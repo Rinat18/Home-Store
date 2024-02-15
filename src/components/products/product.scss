@@ -1,0 +1,80 @@
+.cards-list {
+	// .cards-list__container
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	&__container {
+		width: 90%;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 25px;
+	}
+}
+.card {
+	width: 380px;
+	//   height: 100%;
+	// .card__imageBlock
+
+	&__imageBlock {
+		width: 100%;
+		height: 324px;
+	}
+
+	// .card__image
+
+	&__image {
+		width: 100%;
+		height: 100%;
+	}
+
+	// .card__title
+
+	&__title {
+		margin-top: 10px;
+		color: #686161;
+	}
+
+	// .card__price
+
+	&__price {
+		color: #2e2a2a;
+		font-size: 20px;
+		font-weight: 600;
+		margin-top: 10px;
+	}
+
+	&__admin {
+		margin-top: 10px;
+	}
+	&__admin * {
+		margin-left: 10px;
+	}
+}
+
+.search {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	&__input {
+		padding: 15px;
+		border-radius: 8px 0 0 8px;
+		background-color: #333;
+		color: #fff;
+		font-size: 20px;
+	}
+
+	&__button {
+		font-size: 20px;
+		background-color: inherit;
+		padding: 15px;
+		border-radius: 0 8px 8px 0;
+		background-color: #c0b2b2;
+		transition: all 0.3s;
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: #7a7575;
+			}
+		}
+	}
+}
