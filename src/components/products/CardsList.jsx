@@ -1,22 +1,58 @@
-import React from 'react'
-import { useProduct } from '../../context/ProductContextProvider'
-import { Button } from '@mui/material'
+import React, { useEffect, useState } from "react";
+import { useProduct } from "../../context/ProductContextProvider";
+import { Button } from "@mui/material";
+import AddProduct from "./AddProduct";
+import "./product.scss";
+import EditIcon from "@mui/icons-material/Edit";
+import DeleteIcon from "@mui/icons-material/Delete";
+import EditProduct from "./EditProduct";
 
 export default function CardsList() {
-    const {addProduct, readProducts,products} = useProduct()
+  const { readProducts, products, deleteProduct } = useProduct();
+  const [open, setOpen] = useState(false);
+  const [open2, setOpen2] = useState(false);
+  const openModal = () => {
+    setOpen(true);
+  };
+  const closeModal = () => {
+    setOpen(false);
+  };
+  const openModal2 = () => {
+    setOpen2(true);
+  };
+  const closeModal2 = () => {
+    setOpen2(false);
+  };
+  useEffect(() => {
+    readProducts();
+  }, []);
 
   return (
     <>
-    <Button onClick={}>Add Product</Button>
-    
-      <Modal
-        open={open}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-        onClose={handleClose}
-      >
-        
-      </Modal>
+      <Button onClick={openModal}>Add Product</Button>
+      <div className="cards-list">
+        <div className="cards-list__container">
+          {products && (
+            <>
+              {products.map((elem) => (
+                <div className="card">
+                  <div className="card__imageBlock">
+                    <img className="card__image" src={elem.image} alt="" />
+                  </div>
+                  <div className="card__title">{elem.title}</div>
+                  <div className="card__price">Price: {elem.price}$</div>
+                  <div className="card__admin">
+                    <EditIcon onClick={openModal2} />
+                    <DeleteIcon onClick={() => deleteProduct(elem.id)} />
+                  </div>
+                  <EditProduct open2={open2} elem={elem} closeModal2={closeModal2} />
+                </div>
+              ))}
+            </>
+          )}
+        </div>
+      </div>
+      <AddProduct open={open} closeModal={closeModal} />
     </>
-  )
+  );
 }

@@ -9,7 +9,7 @@ export default function Navbar() {
 						RINAT<span>HUB</span>
 					</div>
 					<div className="header__buttons">
-						<div className="header__cart">
+						<button className="header__cart">
 							<svg
 								width="24"
 								height="25"
@@ -31,8 +31,8 @@ export default function Navbar() {
 								<path d="M5 9V11" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" />
 								<path d="M9 9V11" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" />
 							</svg>
-						</div>
-						<div className="header__auth">
+						</button>
+						<button className="header__auth">
 							<svg
 								width="24"
 								height="24"
@@ -58,7 +58,7 @@ export default function Navbar() {
 									stroke-linejoin="round"
 								/>
 							</svg>
-						</div>
+						</button>
 					</div>
 				</div>
 			</div>

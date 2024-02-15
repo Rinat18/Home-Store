@@ -38,11 +38,25 @@ export default function ProductContextProvider({children}) {
     })
   }
 
+  // ! DELETE 
+  const deleteProduct = async (id) => {
+    await axios.delete(`${API}/${id}`)
+    readProducts()
+  }
+
+  // ! EDIT
+  const editProduct = async (id , obj) => {
+    await axios.patch(`${API}/${id}`, obj)
+    readProducts()
+  }
+
   const values = {
     addProduct,
     readProducts,
     products: state.products,
+    deleteProduct,
+    editProduct,
   }
 
-  return <productContext.Provider>{children}</productContext.Provider>;
+  return <productContext.Provider value={values}>{children}</productContext.Provider>;
 }
