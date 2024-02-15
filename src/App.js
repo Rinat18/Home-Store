@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar/Navbar';
 
 const App = () => {
 	return (
@@ -8,3 +8,5 @@ const App = () => {
 		</>
 	);
 };
+
+export default App;

@@ -1,0 +1,31 @@
+@import "/src/index.css";
+
+.header {
+	padding: 25px 0;
+	background-color: #333;
+	color: #fff;
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__logo {
+		text-transform: uppercase;
+		font-weight: 600;
+		span {
+			color: rgb(252, 175, 107);
+		}
+	}
+
+	&__buttons {
+		display: flex;
+		gap: 15px;
+	}
+
+	&__cart {
+	}
+
+	&__auth {
+	}
+}
