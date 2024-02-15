@@ -15,6 +15,10 @@ function reducer(state = INIT_STATE, action) {
   switch (action.type) {
     case ACTIONS.GET_PRODUCTS:
       return { ...state, products: action.payload };
+    case ACTIONS.GET_ONE_PRODUCT:
+      return {...state, oneProduct: action.payload };
+    default:
+      return state
   }
 }
 
@@ -49,6 +53,7 @@ export default function ProductContextProvider({children}) {
     await axios.patch(`${API}/${id}`, obj)
     readProducts()
   }
+
 
   const values = {
     addProduct,

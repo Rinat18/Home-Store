@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { useProduct } from "../../context/ProductContextProvider";
-import { Button } from "@mui/material";
+import { Button, colors } from "@mui/material";
 import AddProduct from "./AddProduct";
 import "./product.scss";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditProduct from "./EditProduct";
+import StarOutlineIcon from '@mui/icons-material/StarOutline';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import { UseFavorite } from "../../context/FavoritesContextProvider";
 
 export default function CardsList() {
   const { readProducts, products, deleteProduct } = useProduct();
+  const {addFavorite, checkFavorite} = UseFavorite()
   const [open, setOpen] = useState(false);
   const [open2, setOpen2] = useState(false);
   const openModal = () => {
@@ -27,6 +31,7 @@ export default function CardsList() {
     readProducts();
   }, []);
 
+  console.log(checkFavorite());
   return (
     <>
       <Button onClick={openModal}>Add Product</Button>
@@ -44,6 +49,14 @@ export default function CardsList() {
                   <div className="card__admin">
                     <EditIcon onClick={openModal2} />
                     <DeleteIcon onClick={() => deleteProduct(elem.id)} />
+                    <StarOutlineIcon 
+                      sx={{
+                        backgroundColor: checkFavorite(elem.id) ? "black" : "white",
+                        color: checkFavorite(elem.id) ? "white" : "black",
+                        borderRadius: "20px"
+                      }}
+                    onClick={() => addFavorite(elem)} />
+                    <FavoriteBorderIcon />
                   </div>
                   <EditProduct open2={open2} elem={elem} closeModal2={closeModal2} />
                 </div>
