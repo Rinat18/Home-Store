@@ -1,0 +1,62 @@
+.cardDetail {
+  // .cardDetail__container
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  &__container {
+    width: 90%;
+    display: flex;
+    border: 2px solid black;
+    padding: 15px !important;
+  }
+  // .cardDetail__imageBlock
+
+  &__imageBlock {
+    width: 40%;
+  }
+
+  // .cardDetail__imageBlock--image
+
+  &__imageBlock--image {
+    width: 100%;
+  }
+
+  // .cardDetail__text
+
+  &__text {
+    margin-left: 20px;
+  }
+
+  // .cardDetail__text--title
+
+  &__text--title {
+  }
+
+  // .cardDetail__text--price
+
+  &__text--price {
+    margin-top: 10px;
+  }
+
+  // .cardDetail__text--comments
+
+  &__text--comments {
+  }
+
+  // .cardDetail__text--block
+
+  &__text--block {
+    width: 300px;
+    border: 1px solid black;
+    height: 190px;
+    margin-top: 10px;
+  }
+
+  // .cardDetail__text--input
+
+  &__text--input {
+    border: 1px solid black;
+    margin-top: 10px;
+  }
+}

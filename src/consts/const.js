@@ -3,6 +3,8 @@ export const ACTIONS = {
 	GET_PRODUCTS: 'GET_PRODUCTS',
 	GET_ONE_PRODUCT: 'GET_ONE_PRODUCT',
 	GET_CART: 'GET_CACTEGORIES',
+	GET_COMMENTS: 'GET_COMMENTS',
+	GET_LIKES: 'GET_LIKES',
 };
 
 // функция для получения данных из хранилища под ключом cart
@@ -28,3 +30,5 @@ export const calcSubPrice = (elem) => {
 };
 
 export const API_F = "http://localhost:8001/favorites";
+
+export const ADMIN = "admin@gmail.com"
