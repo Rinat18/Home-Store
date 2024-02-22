@@ -58,15 +58,18 @@ export default function FavoritesContextProvider({ children }) {
 
   const checkFavorite = async (id) => {
     const { data } = await axios(API_F);
-    console.log(data);
     if (data) {
-      const check = data.filter((elem) => elem.id == id)
-      console.log(check);
+      const check = data.filter((elem) => elem.id == id);
       return check.length > 0 ? true : false;
     }
-    
   };
-  console.log(checkFavorite().then((e)=> console.log(e)), "func");
+
+
+  // console.log(
+  //   checkFavorite(4).then((res) => {
+  //     return res.json();
+  //   })
+  // );
   const values = {
     addFavorite,
     readFavorite,

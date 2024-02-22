@@ -2,7 +2,8 @@
 	// .cards-list__container
 	width: 100%;
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
+	align-items: center;
 	&__container {
 		width: 90%;
 		display: flex;
@@ -58,7 +59,7 @@
 	padding: 20px;
 	&__input {
 		padding: 15px;
-		border-radius: 8px 0 0 8px;
+		border-radius: 8px;
 		background-color: #333;
 		color: #fff;
 		font-size: 20px;
